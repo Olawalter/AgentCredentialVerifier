@@ -159,8 +159,12 @@ credentials already issued keep their expiry.
 | `EVIDENCE_CONSISTENCY` | `CONSISTENT`, `CONTRADICTORY`, `UNCLEAR` | `CONTRADICTORY` |
 | `REQ_<id>`, one per requirement | `DEMONSTRATED`, `ASSERTED_ONLY`, `FAILED`, `NOT_DEMONSTRATED`, `UNCLEAR` | `DEMONSTRATED`, `FAILED` |
 
-A `DEMONSTRATED` quote must cite a readable `DEMONSTRATION` item that names
-the agent. Every quote is re-grounded by every validator in its own bytes.
+A `DEMONSTRATED` or `FAILED` quote must cite a readable `DEMONSTRATION` item
+that names the agent: a finding against the agent rests on a record of its own
+work, exactly as a finding for it does. (Added during the pre-deployment audit:
+the first draft let a failure be quoted from any readable item, so another
+agent's failed run could have marked this one `NOT_VERIFIED`.) Every quote is
+re-grounded by every validator in its own bytes.
 
 ## The derivation (code, fail-closed, in this order)
 

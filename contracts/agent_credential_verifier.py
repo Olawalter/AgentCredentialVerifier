@@ -1123,10 +1123,11 @@ def _support_met(state: str, quotes: list) -> bool:
 
 
 def _quotable(state: str, eligible: list, named: list) -> list:
-    """The items a reading may quote. A demonstration is quoted only from a
-    readable DEMONSTRATION item that names the agent: evidence of some other
-    agent, or a description of this one, cannot carry it."""
-    if state == DEMONSTRATED:
+    """The items a reading may quote. A reading about the agent's own work - a
+    demonstration, or a failure - is quoted only from a readable DEMONSTRATION
+    item that names the agent: a record of some other agent, or a description of
+    this one, can carry neither a credential nor a finding against it."""
+    if state in (DEMONSTRATED, FAILED):
         return [e for e in eligible if e in named]
     return eligible
 

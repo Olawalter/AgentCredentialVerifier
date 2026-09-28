@@ -70,6 +70,29 @@ def test_a_demonstration_may_not_be_quoted_from_another_agents_run(acv, direct_v
     assert record["verdict"] == "INSUFFICIENT_EVIDENCE"
 
 
+def test_a_failure_may_not_be_quoted_from_another_agents_run(acv, direct_vm, direct_alice,
+                                                            direct_bob):
+    """A finding against the agent rests on a record of this agent's work, exactly
+    as a finding for it does: a failure read from someone else's log is
+    downgraded, and the round fails closed rather than marking this agent
+    NOT_VERIFIED."""
+    failing_other = s.run_log("0100", ["Test flag_altered: CargoScan Bot reported an "
+                                       "edited copy of BL-7731 as authentic. Result: FAIL."])
+    url = "https://runs.example.org/cargoscan-bot/run-0100.json"
+    standard_id, digest = _ready(acv, direct_vm, direct_alice, {url: failing_other})
+    items = s.usual_items() + [s.item(url, failing_other, "Conformance run 0100")]
+    subjects = s.verified_said(flag_altered="FAILED", quotes={"flag_altered": [
+        ("E4", "Test flag_altered: CargoScan Bot reported an edited copy of BL-7731 as "
+               "authentic")]})
+    _c, resolution_id = s.assessed(acv, direct_vm, direct_bob, standard_id, digest,
+                                   subjects=subjects, items=items)
+    record = _record(acv, resolution_id)
+    assert record["named"] == ["E1", "E2"]
+    assert s.finding_in(record, "REQ_FLAG_ALTERED")["state"] == "UNCLEAR"
+    assert (record["verdict"], record["reason_code"]) == ("INSUFFICIENT_EVIDENCE",
+                                                          "REQUIREMENT_UNCLEAR")
+
+
 def test_the_agent_name_matches_however_it_is_written(acv, direct_vm, direct_alice,
                                                       direct_bob, mod):
     # every character that is not a letter or digit separates words, alike
@@ -410,6 +433,21 @@ def test_each_fetch_failure_is_reported_as_what_it_is(acv, direct_vm, direct_ali
     record = _record(acv, resolution_id)
     assert [x["status"] for x in record["sources"]] == ["REDIRECTED", "FORBIDDEN",
                                                         "UNSUPPORTED_CONTENT"]
+    assert record["reason_code"] == "NO_EVIDENCE_READABLE"
+
+
+def test_a_body_that_does_not_decode_is_invalid_content(acv, direct_vm, direct_alice,
+                                                        direct_bob):
+    broken = {"body": b"\xff\xfe\x00\x81 not text at all", "status": 200,
+              "content_type": "text/html; charset=utf-8"}
+    standard_id, digest = _ready(acv, direct_vm, direct_alice,
+                                 {s.RUN_URL: broken, s.OUTPUT_URL: broken})
+    items = [s.item(s.RUN_URL, "", "Run", kind="LIVE"),
+             s.item(s.OUTPUT_URL, "", "Report", kind="LIVE")]
+    _c, resolution_id = s.assessed(acv, direct_vm, direct_bob, standard_id, digest,
+                                   items=items)
+    record = _record(acv, resolution_id)
+    assert [x["status"] for x in record["sources"]] == ["INVALID_CONTENT"] * 2
     assert record["reason_code"] == "NO_EVIDENCE_READABLE"
 
 

@@ -1,0 +1,32 @@
+{
+ "shipdocs": {
+  "assess_window": 1800,
+  "capability": "Retrieves a shipping document from a carrier portal, verifies it against the issuing registry, and flags a copy that has been altered.",
+  "contest_window": 900,
+  "evidence_domains": [
+   "raw.githubusercontent.com",
+   "cdn.jsdelivr.net"
+  ],
+  "min_independent_origins": 2,
+  "name": "Shipping document retrieval and verification",
+  "requirements": [
+   {
+    "description": "The agent fetched a named shipping document and extracted its fields.",
+    "required": true,
+    "requirement_id": "retrieve"
+   },
+   {
+    "description": "The agent checked the document against its issuing registry and reported whether it matched.",
+    "required": true,
+    "requirement_id": "verify"
+   },
+   {
+    "description": "Given a copy that had been altered, the agent reported it as altered.",
+    "required": true,
+    "requirement_id": "flag_altered"
+   }
+  ],
+  "spec_version": 1,
+  "validity_seconds": 2592000
+ }
+}

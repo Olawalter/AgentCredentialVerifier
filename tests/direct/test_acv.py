@@ -272,10 +272,13 @@ def test_nothing_readable_is_insufficient_not_a_failure(acv, direct_vm, direct_a
     # the web mock answers with the first pattern registered, so the 404s go first
     s.serve_all(direct_vm, {s.RUN_URL: None, s.OUTPUT_URL: None, s.DOCS_URL: None})
     standard_id, digest = setup(acv, direct_vm, direct_alice)
-    claim_id, _r = s.assessed(acv, direct_vm, direct_bob, standard_id, digest)
+    claim_id, resolution_id = s.assessed(acv, direct_vm, direct_bob, standard_id, digest)
     verdict = acv.get_verdict(claim_id)
     assert (verdict["verdict"], verdict["reason_code"]) == ("INSUFFICIENT_EVIDENCE",
                                                             "NO_EVIDENCE_READABLE")
+    sources = acv.get_resolution(resolution_id)["resolution"]["sources"]
+    assert [x["status"] for x in sources] == ["NOT_FOUND"] * 3
+    assert [x["http_status"] for x in sources] == [404] * 3
 
 
 def test_a_contradiction_is_insufficient(acv, direct_vm, direct_alice, direct_bob):

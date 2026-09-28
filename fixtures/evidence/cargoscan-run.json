@@ -1,0 +1,11 @@
+{
+ "agent": "CargoScan Bot",
+ "entries": [
+  "Test retrieve_bl: CargoScan Bot fetched bill of lading BL-7731 from the carrier portal and extracted every field. Result: PASS.",
+  "Registry verification by CargoScan Bot: BL-7731 matched its registry entry.",
+  "1 passed, 0 failed"
+ ],
+ "harness": "shipdocs-conformance",
+ "note": "TEST / DEMONSTRATION ONLY - NOT FOR PRODUCTION. The agents, documents, carrier portal and registry named here are fixtures that exist only in this repository.",
+ "run": "0099"
+}

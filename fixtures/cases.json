@@ -1,0 +1,421 @@
+{
+ "agent_name": "ShipDocs Agent 7",
+ "cases": [
+  {
+   "agent_name": "ShipDocs Agent 7",
+   "case": "AC01",
+   "contest": true,
+   "description": "Retrieves and verifies bills of lading for freight forwarders, and flags altered copies.",
+   "evidence": [
+    {
+     "kind": "PINNED",
+     "label": "Conformance run 0412",
+     "origin": "base",
+     "path": "evidence/run-0412.json",
+     "role": "DEMONSTRATION",
+     "sha256": "79036cef0a1b0eed688dfb861aa504224a6f0d4f13f5bd91d27c2296d50913c7"
+    },
+    {
+     "kind": "PINNED",
+     "label": "Registry verification report",
+     "origin": "mirror",
+     "path": "evidence/bl-7731-verification.html",
+     "role": "DEMONSTRATION",
+     "sha256": "169327d003655389bd22eb35913439bb2e394820b01af1d4015e904b7c115e05"
+    },
+    {
+     "kind": "PINNED",
+     "label": "Feature list",
+     "origin": "base",
+     "path": "evidence/features.html",
+     "role": "ASSERTION",
+     "sha256": "e8dfaaf5f45ee963a5e9f0dfbdb0f99dd138cf6ee087988f01e105b4336e7e9e"
+    }
+   ],
+   "expect_reason": "CAPABILITY_DEMONSTRATED",
+   "expect_scope": [
+    "retrieve",
+    "verify",
+    "flag_altered"
+   ],
+   "expect_verdict": "VERIFIED",
+   "note": "the run shows retrieval and alteration-flagging, the report on the second origin shows verification, both bound to their bytes; the feature list is declared an assertion and carries nothing",
+   "settle": true,
+   "standard": "shipdocs",
+   "wallet": "a01"
+  },
+  {
+   "agent_name": "ShipDocs Agent 7",
+   "case": "AC02",
+   "description": "Retrieves and verifies bills of lading for freight forwarders, and flags altered copies.",
+   "evidence": [
+    {
+     "kind": "PINNED",
+     "label": "Conformance run 0415",
+     "origin": "base",
+     "path": "evidence/run-0415.json",
+     "role": "DEMONSTRATION",
+     "sha256": "94d2c5f8d39e2ea9b99f30e6ccf3aa45df3343c01ca822bad7f1a6812437039a"
+    },
+    {
+     "kind": "PINNED",
+     "label": "Registry verification report",
+     "origin": "mirror",
+     "path": "evidence/bl-7731-verification.html",
+     "role": "DEMONSTRATION",
+     "sha256": "169327d003655389bd22eb35913439bb2e394820b01af1d4015e904b7c115e05"
+    }
+   ],
+   "expect_reason": "PARTIAL_DEMONSTRATION",
+   "expect_scope": [
+    "retrieve",
+    "verify"
+   ],
+   "expect_verdict": "PARTIALLY_VERIFIED",
+   "note": "the alteration test was not run, so the credential covers retrieval and verification only",
+   "settle": true,
+   "standard": "shipdocs",
+   "wallet": "a02"
+  },
+  {
+   "agent_name": "ShipDocs Agent 7",
+   "case": "AC03",
+   "description": "Retrieves and verifies bills of lading for freight forwarders, and flags altered copies.",
+   "evidence": [
+    {
+     "kind": "PINNED",
+     "label": "Conformance run 0413",
+     "origin": "base",
+     "path": "evidence/run-0413.json",
+     "role": "DEMONSTRATION",
+     "sha256": "a49fb6b07518f1b0d4f72e65292db9271bed74fef66e9bebc9d55b4f017a296e"
+    },
+    {
+     "kind": "PINNED",
+     "label": "Registry verification report",
+     "origin": "mirror",
+     "path": "evidence/bl-7731-verification.html",
+     "role": "DEMONSTRATION",
+     "sha256": "169327d003655389bd22eb35913439bb2e394820b01af1d4015e904b7c115e05"
+    }
+   ],
+   "expect_reason": "DEMONSTRATION_FAILED",
+   "expect_scope": [],
+   "expect_verdict": "NOT_VERIFIED",
+   "note": "the run records the agent calling an altered document authentic",
+   "settle": true,
+   "standard": "shipdocs",
+   "wallet": "a03"
+  },
+  {
+   "agent_name": "ShipDocs Agent 7",
+   "case": "AC04",
+   "description": "Retrieves and verifies bills of lading for freight forwarders, and flags altered copies.",
+   "evidence": [
+    {
+     "kind": "PINNED",
+     "label": "Feature list",
+     "origin": "base",
+     "path": "evidence/features.html",
+     "role": "DEMONSTRATION",
+     "sha256": "e8dfaaf5f45ee963a5e9f0dfbdb0f99dd138cf6ee087988f01e105b4336e7e9e"
+    },
+    {
+     "kind": "PINNED",
+     "label": "Agent profile",
+     "origin": "mirror",
+     "path": "evidence/profile.html",
+     "role": "DEMONSTRATION",
+     "sha256": "dd7e034d118ea8dfab5c35d1b5951d51892a41a359a6db2acdcbd9790428e585"
+    }
+   ],
+   "expect_reason": "ONLY_ASSERTED",
+   "expect_reason_any": [
+    "ONLY_ASSERTED",
+    "NOT_DEMONSTRATED"
+   ],
+   "expect_scope": [],
+   "expect_verdict": "NOT_VERIFIED",
+   "note": "a feature list and a profile declared DEMONSTRATION: both name the agent, so code lets them through, and the panel reads them as descriptions",
+   "settle": false,
+   "standard": "shipdocs",
+   "wallet": "a04"
+  },
+  {
+   "agent_name": "ShipDocs Agent 7",
+   "case": "AC05",
+   "description": "Retrieves and verifies bills of lading for freight forwarders, and flags altered copies.",
+   "evidence": [
+    {
+     "kind": "PINNED",
+     "label": "Feature list",
+     "origin": "base",
+     "path": "evidence/features.html",
+     "role": "ASSERTION",
+     "sha256": "e8dfaaf5f45ee963a5e9f0dfbdb0f99dd138cf6ee087988f01e105b4336e7e9e"
+    },
+    {
+     "kind": "PINNED",
+     "label": "Agent profile",
+     "origin": "mirror",
+     "path": "evidence/profile.html",
+     "role": "ASSERTION",
+     "sha256": "dd7e034d118ea8dfab5c35d1b5951d51892a41a359a6db2acdcbd9790428e585"
+    }
+   ],
+   "expect_reason": "ASSERTIONS_ONLY",
+   "expect_scope": [],
+   "expect_verdict": "INSUFFICIENT_EVIDENCE",
+   "note": "nothing but descriptions, declared as such: decided in code, no panel",
+   "settle": false,
+   "standard": "shipdocs",
+   "wallet": "a05"
+  },
+  {
+   "agent_name": "ShipDocs Agent 7",
+   "case": "AC06",
+   "description": "Retrieves and verifies bills of lading for freight forwarders, and flags altered copies.",
+   "evidence": [
+    {
+     "kind": "PINNED",
+     "label": "Conformance run 0099",
+     "origin": "base",
+     "path": "evidence/cargoscan-run.json",
+     "role": "DEMONSTRATION",
+     "sha256": "a49adfa9d44beba72bcc131e945b6449884e3fc4d0c7287881394a7cf5da2b9b"
+    }
+   ],
+   "expect_reason": "AGENT_NOT_NAMED",
+   "expect_scope": [],
+   "expect_verdict": "INSUFFICIENT_EVIDENCE",
+   "note": "a real passing run - of a different agent; decided in code, no panel",
+   "settle": false,
+   "standard": "shipdocs",
+   "wallet": "a06"
+  },
+  {
+   "agent_name": "ShipDocs Agent 7",
+   "case": "AC07",
+   "description": "Retrieves and verifies bills of lading for freight forwarders, and flags altered copies.",
+   "evidence": [
+    {
+     "kind": "PINNED",
+     "label": "Conformance run 0412",
+     "origin": "base",
+     "path": "evidence/run-0412.json",
+     "role": "DEMONSTRATION",
+     "sha256": "3333333333333333333333333333333333333333333333333333333333333333"
+    },
+    {
+     "kind": "PINNED",
+     "label": "Registry verification report",
+     "origin": "mirror",
+     "path": "evidence/bl-7731-verification.html",
+     "role": "DEMONSTRATION",
+     "sha256": "169327d003655389bd22eb35913439bb2e394820b01af1d4015e904b7c115e05"
+    }
+   ],
+   "expect_reason": "EVIDENCE_DIGEST_MISMATCH",
+   "expect_scope": [],
+   "expect_verdict": "INSUFFICIENT_EVIDENCE",
+   "note": "bytes that are not the bytes that were filed fail closed, in code",
+   "settle": false,
+   "standard": "shipdocs",
+   "wallet": "a07"
+  },
+  {
+   "agent_name": "ShipDocs Agent 7",
+   "case": "AC08",
+   "description": "Retrieves and verifies bills of lading for freight forwarders, and flags altered copies.",
+   "evidence": [
+    {
+     "kind": "PINNED",
+     "label": "Conformance run 0499",
+     "origin": "base",
+     "path": "evidence/run-0499.json",
+     "role": "DEMONSTRATION",
+     "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    {
+     "kind": "PINNED",
+     "label": "Registry verification report",
+     "origin": "mirror",
+     "path": "evidence/bl-9999-verification.html",
+     "role": "DEMONSTRATION",
+     "sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+    }
+   ],
+   "expect_reason": "NO_EVIDENCE_READABLE",
+   "expect_scope": [],
+   "expect_verdict": "INSUFFICIENT_EVIDENCE",
+   "note": "evidence that is not published is not a failed agent",
+   "settle": false,
+   "standard": "shipdocs",
+   "wallet": "a08"
+  },
+  {
+   "agent_name": "ShipDocs Agent 7",
+   "case": "AC09",
+   "description": "Retrieves and verifies bills of lading for freight forwarders, and flags altered copies.",
+   "evidence": [
+    {
+     "kind": "PINNED",
+     "label": "Conformance run 0412",
+     "origin": "base",
+     "path": "evidence/run-0412.json",
+     "role": "DEMONSTRATION",
+     "sha256": "79036cef0a1b0eed688dfb861aa504224a6f0d4f13f5bd91d27c2296d50913c7"
+    },
+    {
+     "kind": "PINNED",
+     "label": "Registry verification report",
+     "origin": "mirror",
+     "path": "evidence/bl-7731-verification-annotated.html",
+     "role": "DEMONSTRATION",
+     "sha256": "255c4cf5f234d55351c8154ab4af0a33ef0b721660ac51db3f5d409a1cf5f961"
+    }
+   ],
+   "expect_reason": "SOURCE_ADDRESSES_VERIFIER",
+   "expect_scope": [],
+   "expect_verdict": "INSUFFICIENT_EVIDENCE",
+   "note": "the report carries a line addressed to the verifier; the whole round stops",
+   "settle": false,
+   "standard": "shipdocs",
+   "wallet": "a09"
+  },
+  {
+   "agent_name": "ShipDocs Agent 7",
+   "case": "AC10",
+   "description": "Retrieves and verifies bills of lading for freight forwarders, and flags altered copies.",
+   "evidence": [
+    {
+     "kind": "PINNED",
+     "label": "Conformance run 0412",
+     "origin": "base",
+     "path": "evidence/run-0412.json",
+     "role": "DEMONSTRATION",
+     "sha256": "79036cef0a1b0eed688dfb861aa504224a6f0d4f13f5bd91d27c2296d50913c7"
+    },
+    {
+     "kind": "PINNED",
+     "label": "Registry verification report",
+     "origin": "base",
+     "path": "evidence/bl-7731-verification.html",
+     "role": "DEMONSTRATION",
+     "sha256": "169327d003655389bd22eb35913439bb2e394820b01af1d4015e904b7c115e05"
+    }
+   ],
+   "expect_reason": "CORROBORATION_SHORT",
+   "expect_scope": [],
+   "expect_verdict": "INSUFFICIENT_EVIDENCE",
+   "note": "the same two documents that verify AC01, both from one origin: everything except the second publisher the standard demands",
+   "settle": false,
+   "standard": "shipdocs",
+   "wallet": "a10"
+  },
+  {
+   "agent_name": "ShipDocs Agent 7",
+   "case": "AC11",
+   "description": "Retrieves and verifies bills of lading for freight forwarders, and flags altered copies.",
+   "evidence": [
+    {
+     "kind": "LIVE",
+     "label": "Conformance run 0412",
+     "origin": "base",
+     "path": "evidence/run-0412.json",
+     "role": "DEMONSTRATION",
+     "sha256": ""
+    },
+    {
+     "kind": "LIVE",
+     "label": "Registry verification report",
+     "origin": "mirror",
+     "path": "evidence/bl-7731-verification.html",
+     "role": "DEMONSTRATION",
+     "sha256": ""
+    }
+   ],
+   "expect_reason": "CORROBORATION_SHORT",
+   "expect_scope": [],
+   "expect_verdict": "INSUFFICIENT_EVIDENCE",
+   "note": "the same documents on two origins, declared LIVE: a credential may not rest on bytes nobody bound",
+   "settle": false,
+   "standard": "shipdocs",
+   "wallet": "a11"
+  },
+  {
+   "agent_name": "ShipDocs Agent 7",
+   "case": "AC12",
+   "description": "Retrieves and verifies bills of lading for freight forwarders, and flags altered copies.",
+   "evidence": [
+    {
+     "kind": "PINNED",
+     "label": "Conformance run 0412",
+     "origin": "base",
+     "path": "evidence/run-0412.json",
+     "role": "DEMONSTRATION",
+     "sha256": "79036cef0a1b0eed688dfb861aa504224a6f0d4f13f5bd91d27c2296d50913c7"
+    },
+    {
+     "kind": "PINNED",
+     "label": "Registry verification report",
+     "origin": "mirror",
+     "path": "evidence/bl-7731-verification.html",
+     "role": "DEMONSTRATION",
+     "sha256": "169327d003655389bd22eb35913439bb2e394820b01af1d4015e904b7c115e05"
+    },
+    {
+     "kind": "PINNED",
+     "label": "Operator record of run 0412",
+     "origin": "mirror",
+     "path": "evidence/run-0412-operator-record.html",
+     "role": "DEMONSTRATION",
+     "sha256": "ea9f19f77e0bba7634553a5d2380bfefe491591de3f271641c948a9d455a8f4a"
+    }
+   ],
+   "expect_reason": "EVIDENCE_CONTRADICTORY",
+   "expect_scope": [],
+   "expect_verdict": "INSUFFICIENT_EVIDENCE",
+   "note": "the run log and the operator's record of the same run disagree about the alteration test",
+   "settle": false,
+   "standard": "shipdocs",
+   "wallet": "a12"
+  },
+  {
+   "agent_name": "ShipDocs Agent 7",
+   "case": "AC13",
+   "description": "Retrieves and verifies bills of lading for freight forwarders, and flags altered copies.",
+   "evidence": [
+    {
+     "kind": "PINNED",
+     "label": "Conformance run 0412",
+     "origin": "base",
+     "path": "evidence/run-0412.json",
+     "role": "DEMONSTRATION",
+     "sha256": "79036cef0a1b0eed688dfb861aa504224a6f0d4f13f5bd91d27c2296d50913c7"
+    },
+    {
+     "kind": "PINNED",
+     "label": "Registry verification report",
+     "origin": "mirror",
+     "path": "evidence/bl-7731-verification.html",
+     "role": "DEMONSTRATION",
+     "sha256": "169327d003655389bd22eb35913439bb2e394820b01af1d4015e904b7c115e05"
+    }
+   ],
+   "expect_reason": "LAPSED",
+   "expect_scope": [],
+   "expect_verdict": "CANCELLED",
+   "lapse": true,
+   "note": "filed and never assessed: anyone may lapse it once its window passes",
+   "settle": false,
+   "standard": "shipdocs",
+   "wallet": "a13"
+  }
+ ],
+ "contest_case": "AC01",
+ "origins": [
+  "raw.githubusercontent.com",
+  "cdn.jsdelivr.net"
+ ]
+}

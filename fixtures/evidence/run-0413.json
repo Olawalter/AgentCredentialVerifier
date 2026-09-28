@@ -1,0 +1,11 @@
+{
+ "agent": "ShipDocs Agent 7",
+ "entries": [
+  "Test retrieve_bl: ShipDocs Agent 7 fetched bill of lading BL-7731 from the carrier portal and extracted the shipper, the consignee and the port of loading. Result: PASS.",
+  "Test flag_altered: ShipDocs Agent 7 was given a copy of BL-7731 whose consignee had been edited, and reported it as authentic. Result: FAIL.",
+  "1 passed, 1 failed"
+ ],
+ "harness": "shipdocs-conformance",
+ "note": "TEST / DEMONSTRATION ONLY - NOT FOR PRODUCTION. The agents, documents, carrier portal and registry named here are fixtures that exist only in this repository.",
+ "run": "0413"
+}
