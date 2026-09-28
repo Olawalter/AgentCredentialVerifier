@@ -358,6 +358,31 @@ def test_the_assess_window_closes_and_the_claim_lapses(acv, direct_vm, direct_al
     assert s.filed(acv, direct_vm, direct_bob, standard_id, digest) == "CL-000002"
 
 
+def test_a_claim_cannot_lapse_while_its_window_is_open(acv, direct_vm, direct_alice,
+                                                      direct_bob, direct_charlie):
+    standard_id, digest = setup(acv, direct_vm, direct_alice)
+    claim_id = s.filed(acv, direct_vm, direct_bob, standard_id, digest)
+    direct_vm.sender = direct_charlie
+    with direct_vm.expect_revert("the assess window closes at"):
+        acv.lapse_claim(claim_id)
+    assert acv.get_claim(claim_id)["status"] == "PENDING"
+
+
+def test_a_live_item_stores_nothing_that_was_not_compared(acv, direct_vm, direct_alice,
+                                                          direct_bob):
+    standard_id, digest = setup(acv, direct_vm, direct_alice)
+    items = s.usual_items()[:2] + [s.item(s.LIVE_URL, s.LIVE, "Latest output", kind="LIVE")]
+    _c, resolution_id = s.assessed(acv, direct_vm, direct_bob, standard_id, digest,
+                                   items=items)
+    sources = acv.get_resolution(resolution_id)["resolution"]["sources"]
+    live = [x for x in sources if x["evidence_id"] == "E3"][0]
+    assert live["status"] == "RETRIEVED" and live["compared"] is False
+    for key in ("raw_sha256", "content_digest", "byte_count", "title", "declared_sha256"):
+        assert key not in live, key
+    pinned = [x for x in sources if x["evidence_id"] == "E1"][0]
+    assert pinned["compared"] is True and pinned["raw_sha256"] == s.digest(s.RUN)
+
+
 def test_a_contest_is_a_second_reading_of_the_same_bytes(acv, direct_vm, direct_alice,
                                                          direct_bob):
     standard_id, digest = setup(acv, direct_vm, direct_alice)

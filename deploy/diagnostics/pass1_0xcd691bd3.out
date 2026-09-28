@@ -1,0 +1,113 @@
+13:41:48 contract 0xCD691bD37c11a3c9585340c3eC65E929073a184d phase full
+13:41:48 phase standards
+13:41:48   standard:shipdocs: publish_standard as issuer
+13:42:27     FINALIZED/SUCCESS votes agree,idle,agree,idle,agree
+13:42:29     shipdocs -> CS-000001
+13:42:29 phase cases
+13:42:30   file:AC13: file_claim as a13
+13:43:10     FINALIZED/SUCCESS votes agree,idle,agree,idle,agree
+13:43:14   file:AC01: file_claim as a01
+13:43:52     FINALIZED/SUCCESS votes agree,idle,agree,agree,agree
+13:43:54   assess:AC01: assess as keeper
+13:45:11     FINALIZED/SUCCESS votes agree,agree,idle,agree,idle
+13:45:13     AC01: VERIFIED/CAPABILITY_DEMONSTRATED/retrieve,verify,flag_altered HELD
+13:45:13   contest:AC01: contest as issuer
+13:46:08     FINALIZED/SUCCESS votes idle,agree,agree,idle,agree
+13:46:10     AC01:contest: VERIFIED/CAPABILITY_DEMONSTRATED/retrieve,verify,flag_altered HELD
+13:46:12   file:AC02: file_claim as a02
+13:46:51     FINALIZED/SUCCESS votes agree,idle,agree,idle,agree
+13:46:53   assess:AC02: assess as keeper
+13:48:00     FINALIZED/SUCCESS votes agree,idle,agree,agree,idle
+13:48:02     AC02: PARTIALLY_VERIFIED/PARTIAL_DEMONSTRATION/retrieve,verify HELD
+13:48:03   file:AC03: file_claim as a03
+13:48:42     FINALIZED/SUCCESS votes agree,agree,agree,agree,idle
+13:48:43   assess:AC03: assess as keeper
+13:49:34     FINALIZED/SUCCESS votes idle,agree,agree,idle,agree
+13:49:36     AC03: NOT_VERIFIED/DEMONSTRATION_FAILED/ HELD
+13:49:38   file:AC04: file_claim as a04
+13:50:16     FINALIZED/SUCCESS votes agree,idle,agree,agree,agree
+13:50:18   assess:AC04: assess as keeper
+13:51:24     FINALIZED/SUCCESS votes idle,agree,agree,agree,idle
+13:51:26     AC04: NOT_VERIFIED/ONLY_ASSERTED/ HELD
+13:51:28   file:AC05: file_claim as a05
+13:52:06     FINALIZED/SUCCESS votes agree,idle,agree,agree,idle
+13:52:08   assess:AC05: assess as keeper
+13:52:51     FINALIZED/SUCCESS votes idle,agree,idle,agree,agree
+13:52:53     AC05: INSUFFICIENT_EVIDENCE/ASSERTIONS_ONLY/ HELD
+13:52:55   file:AC06: file_claim as a06
+13:53:33     FINALIZED/SUCCESS votes idle,agree,agree,idle,agree
+13:53:34   assess:AC06: assess as keeper
+13:54:13     FINALIZED/SUCCESS votes idle,agree,idle,agree,agree
+13:54:14     AC06: INSUFFICIENT_EVIDENCE/AGENT_NOT_NAMED/ HELD
+13:54:16   file:AC07: file_claim as a07
+13:55:00     FINALIZED/SUCCESS votes agree,idle,agree,idle,agree
+13:55:02   assess:AC07: assess as keeper
+13:55:51     FINALIZED/SUCCESS votes idle,idle,agree,agree,agree
+13:55:53     AC07: INSUFFICIENT_EVIDENCE/EVIDENCE_DIGEST_MISMATCH/ HELD
+13:55:55   file:AC08: file_claim as a08
+13:56:33     FINALIZED/SUCCESS votes idle,agree,agree,idle,agree
+13:56:35   assess:AC08: assess as keeper
+13:57:20     FINALIZED/SUCCESS votes agree,idle,agree,agree,idle
+13:57:22     AC08: INSUFFICIENT_EVIDENCE/NO_EVIDENCE_READABLE/ HELD
+13:57:23   file:AC09: file_claim as a09
+13:58:01     FINALIZED/SUCCESS votes agree,idle,idle,agree,agree
+13:58:03   assess:AC09: assess as keeper
+13:58:47     FINALIZED/SUCCESS votes agree,agree,agree,agree,idle
+13:58:48     AC09: INSUFFICIENT_EVIDENCE/SOURCE_ADDRESSES_VERIFIER/ HELD
+13:58:50   file:AC10: file_claim as a10
+13:59:34     FINALIZED/SUCCESS votes agree,agree,idle,idle,agree
+13:59:36   assess:AC10: assess as keeper
+14:00:38     FINALIZED/SUCCESS votes agree,agree,idle,agree,idle
+14:00:39     AC10: INSUFFICIENT_EVIDENCE/CORROBORATION_SHORT/ HELD
+14:00:41   file:AC11: file_claim as a11
+14:01:19     FINALIZED/SUCCESS votes idle,agree,idle,agree,agree
+14:01:21   assess:AC11: assess as keeper
+    rpc transient on eth_getTransactionCount (1/8): Request to https://studio.genlayer.com/api failed: HTTPSConnectionPool(host='studio.genlay; retry in 5s
+14:02:51     FINALIZED/SUCCESS votes idle,agree,agree,agree,idle
+14:02:53     AC11: INSUFFICIENT_EVIDENCE/CORROBORATION_SHORT/ HELD
+14:02:54   file:AC12: file_claim as a12
+14:03:34     FINALIZED/SUCCESS votes agree,agree,agree,agree,agree
+14:03:36   assess:AC12: assess as keeper
+14:04:49     FINALIZED/SUCCESS votes agree,agree,idle,agree,idle
+14:04:51     AC12: INSUFFICIENT_EVIDENCE/EVIDENCE_CONTRADICTORY/ HELD
+14:04:51 phase settle
+14:04:53   finalize:AC01: finalize as keeper
+14:05:32     FINALIZED/SUCCESS votes idle,agree,agree,agree,agree
+14:05:34     AC01 consumer view: verified=True partial=False HELD
+14:05:36   finalize:AC02: finalize as keeper
+14:06:15     FINALIZED/SUCCESS votes agree,agree,idle,agree,idle
+14:06:17     AC02 consumer view: verified=False partial=True HELD
+14:06:18   finalize:AC03: finalize as keeper
+14:07:07     FINALIZED/SUCCESS votes agree,agree,idle,agree,agree
+14:07:08     AC03 consumer view: verified=False partial=False HELD
+14:07:10   waiting 330s for the assess window of CL-000001
+14:09:10   waiting 210s for the assess window of CL-000001
+14:11:10   waiting 90s for the assess window of CL-000001
+14:12:41   lapse:AC13: lapse_claim as keeper
+14:13:20     FINALIZED/SUCCESS votes agree,agree,agree,agree,agree
+14:13:23   stats: {"claims": 13, "resolutions": 13, "standards": 1, "verified": 1}
+14:13:23 phase refusals
+14:13:25   refuse:wrong_hash: expecting a refusal of file_claim
+14:14:09     refused
+14:14:09   refuse:unknown_standard: expecting a refusal of file_claim
+14:14:49     refused
+14:14:49   refuse:outside_domains: expecting a refusal of file_claim
+14:15:34     refused
+14:15:34   refuse:undeclared_role: expecting a refusal of file_claim
+14:16:12     refused
+14:16:12   refuse:vague_agent_name: expecting a refusal of file_claim
+14:16:51     refused
+14:16:51   refuse:description_addresses_verifier: expecting a refusal of file_claim
+14:17:31     refused
+14:17:31   refuse:second_open_claim: expecting a refusal of file_claim
+14:18:11     refused
+14:18:11   refuse:double_assessment: expecting a refusal of assess
+14:18:51     refused
+14:18:51   refuse:stranger_contest: expecting a refusal of contest
+14:19:29     refused
+14:19:29   refuse:stranger_withdraw: expecting a refusal of withdraw_claim
+14:20:07     refused
+14:20:07   refuse:stranger_retire: expecting a refusal of retire_standard
+    rpc transient on eth_getTransactionByHash (1/8): Request to https://studio.genlayer.com/api failed: ('Connection aborted.', RemoteDisconnec; retry in 5s
+14:20:48     refused
+14:20:48 summary {"steps": 42, "transactions": 42, "outcomes_checked": 17, "outcomes_held": 17, "missed": [], "refusals": 11, "refusals_held": 11}

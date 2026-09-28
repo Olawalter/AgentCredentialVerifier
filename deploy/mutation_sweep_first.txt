@@ -41,3 +41,137 @@ control green; 85 mutations over 3 job(s)
   [37/85] killed  : the corroboration floor does not hold
   [38/85] killed  : unbound bytes may carry a credential
   [39/85] killed  : corroboration counts items, not distinct hosts
+  [40/85] killed  : a partial demonstration is a full credential
+  [41/85] killed  : a negative credential carries a scope
+  [42/85] killed  : an optional demonstration counts toward the credential
+  [43/85] killed  : the scope includes requirements read on unbound bytes
+  [44/85] killed  : the consequence is not compared
+  [45/85] SURVIVED: the scope is not compared
+  [46/85] SURVIVED: which items name the agent is not compared
+  [47/85] SURVIVED: the named list is not gated
+  [48/85] killed  : a transient failure ratifies a different failure
+  [49/85] SURVIVED: the leader's payload is gated against its own text, not this node's
+  [50/85] killed  : a payload about another claim is accepted
+  [51/85] killed  : a requirement id may shadow a built-in subject
+  [52/85] SURVIVED: a standard need not name its evidence sources
+  [53/85] killed  : no requirement need be required
+  [54/85] killed  : standard text may address the verifier
+  [55/85] killed  : min_independent_origins may exceed the sources the standard names
+  [56/85] killed  : the windows are unbounded
+  [57/85] killed  : the validity is unbounded
+  [58/85] killed  : an IP literal is a host
+  [59/85] killed  : a pinned item needs no digest
+  [60/85] killed  : a live item may declare a digest it is not held to
+  [61/85] killed  : an item need not declare a role
+  [62/85] killed  : an item may come from any host at all
+  [63/85] killed  : the same document may be declared twice
+  [64/85] killed  : the evidence list is unbounded
+  [65/85] killed  : a claim may be assessed after its window
+  [66/85] killed  : a claim may be assessed twice
+  [67/85] killed  : a credential may be contested twice
+  [68/85] killed  : a stranger may contest a credential
+  [69/85] killed  : a credential may be contested after its window
+  [70/85] killed  : a credential may be made final inside its contest window
+  [71/85] killed  : anyone may withdraw somebody else's claim
+  [72/85] killed  : a retired standard still takes claims
+  [73/85] killed  : anyone may retire a standard
+  [74/85] killed  : the standard hash a claim commits to is not checked
+  [75/85] SURVIVED: a claim may lapse while its window is open
+  [76/85] killed  : one agent may hold two open claims against one standard
+  [77/85] killed  : a closed claim keeps the agent's slot
+  [78/85] killed  : finality does not issue the credential
+  [79/85] killed  : a credential never expires
+  [80/85] killed  : a negative credential carries an expiry
+  [81/85] killed  : the open-claim cap does not hold
+  [82/85] killed  : the consumer view is case-sensitive about the address
+  [83/85] killed  : every reading is marked compared
+  [84/85] killed  : the verified count is not corrected when a contest overturns
+  [85/85] SURVIVED: a record stores a live item's bytes
+
+killed:   a redirect is read as a retrieved item
+SURVIVED: a 404 is a generic failure
+killed:   a forbidden document is a generic failure
+killed:   a binary content type is read
+SURVIVED: an undecodable body is read
+killed:   an oversized document is not marked partial
+killed:   a pinned item's bytes are not checked against the declared digest
+killed:   a digest mismatch is judged by the panel anyway
+killed:   a round with no readable evidence is judged anyway
+killed:   evidence addressing the verifier is judged anyway
+killed:   text in the visible body is not scanned
+killed:   markup and attributes are not scanned
+killed:   the title is not scanned
+killed:   nothing is bound to a declared item, so bytes are neither compared nor stored
+killed:   a claim of nothing but assertions reaches the panel
+killed:   a claim whose demonstrations never name the agent reaches the panel
+killed:   an assertion that names the agent counts as a named demonstration
+killed:   a demonstration need not name the agent
+killed:   any text names any agent
+killed:   an assertion counts as a demonstration
+killed:   a demonstration may be quoted from any readable item
+killed:   an agent name may be a word any document contains
+killed:   the agent's description is not screened
+killed:   a reading that bears on the credential needs no quote
+killed:   a spliced quote is accepted when the panel answers
+SURVIVED: a spliced quote passes the gate
+killed:   a quote need not ground in the text this node retrieved
+killed:   the gate lets a demonstration quote any readable item
+killed:   a code reason is overridden by the panel's reading
+killed:   an unusable panel answer reaches a credential
+killed:   contradictory evidence is credited anyway
+killed:   a failed required demonstration is credited
+killed:   an unclear required reading is credited
+killed:   an optional requirement decides the credential
+killed:   no demonstration at all falls through to the corroboration floor
+killed:   a description read as such is reported as undemonstrated
+killed:   the corroboration floor does not hold
+killed:   unbound bytes may carry a credential
+killed:   corroboration counts items, not distinct hosts
+killed:   a partial demonstration is a full credential
+killed:   an optional demonstration counts toward the credential
+killed:   a negative credential carries a scope
+killed:   the scope includes requirements read on unbound bytes
+killed:   the consequence is not compared
+SURVIVED: the scope is not compared
+SURVIVED: which items name the agent is not compared
+SURVIVED: the named list is not gated
+SURVIVED: the leader's payload is gated against its own text, not this node's
+killed:   a transient failure ratifies a different failure
+killed:   a payload about another claim is accepted
+SURVIVED: a standard need not name its evidence sources
+killed:   a requirement id may shadow a built-in subject
+killed:   no requirement need be required
+killed:   min_independent_origins may exceed the sources the standard names
+killed:   standard text may address the verifier
+killed:   the windows are unbounded
+killed:   the validity is unbounded
+killed:   an IP literal is a host
+killed:   a pinned item needs no digest
+killed:   a live item may declare a digest it is not held to
+killed:   an item need not declare a role
+killed:   an item may come from any host at all
+killed:   the same document may be declared twice
+killed:   the evidence list is unbounded
+killed:   a claim may be assessed twice
+killed:   a claim may be assessed after its window
+killed:   a credential may be contested twice
+killed:   a stranger may contest a credential
+killed:   a credential may be contested after its window
+killed:   a credential may be made final inside its contest window
+SURVIVED: a claim may lapse while its window is open
+killed:   anyone may withdraw somebody else's claim
+killed:   a retired standard still takes claims
+killed:   anyone may retire a standard
+killed:   the standard hash a claim commits to is not checked
+killed:   one agent may hold two open claims against one standard
+killed:   the open-claim cap does not hold
+killed:   a closed claim keeps the agent's slot
+killed:   finality does not issue the credential
+killed:   a credential never expires
+killed:   a negative credential carries an expiry
+killed:   the consumer view is case-sensitive about the address
+SURVIVED: a record stores a live item's bytes
+killed:   every reading is marked compared
+killed:   the verified count is not corrected when a contest overturns
+
+mutations: 75 killed, 10 survived, 0 anchor missing

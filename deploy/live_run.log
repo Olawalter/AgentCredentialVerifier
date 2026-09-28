@@ -1,0 +1,111 @@
+14:22:27 contract 0xCD691bD37c11a3c9585340c3eC65E929073a184d phase full
+14:22:27 phase standards
+14:22:27   standard:shipdocs: publish_standard as issuer
+14:23:06     FINALIZED/SUCCESS votes agree,idle,idle,agree,agree
+14:23:08     shipdocs -> CS-000002
+14:23:08 phase cases
+14:23:10   file:AC13: file_claim as a13
+14:23:50     FINALIZED/SUCCESS votes agree,agree,agree,agree,agree
+14:23:54   file:AC01: file_claim as a01
+14:24:32     FINALIZED/SUCCESS votes agree,agree,idle,agree,idle
+14:24:34   assess:AC01: assess as keeper
+14:25:30     FINALIZED/SUCCESS votes agree,idle,agree,agree,idle
+14:25:32     AC01: VERIFIED/CAPABILITY_DEMONSTRATED/retrieve,verify,flag_altered HELD
+14:25:32   contest:AC01: contest as issuer
+14:26:34     FINALIZED/SUCCESS votes idle,agree,idle,agree,agree
+14:26:36     AC01:contest: VERIFIED/CAPABILITY_DEMONSTRATED/retrieve,verify,flag_altered HELD
+14:26:38   file:AC02: file_claim as a02
+14:27:17     FINALIZED/SUCCESS votes agree,agree,agree,agree,agree
+14:27:18   assess:AC02: assess as keeper
+14:28:12     FINALIZED/SUCCESS votes idle,agree,agree,agree,idle
+14:28:14     AC02: PARTIALLY_VERIFIED/PARTIAL_DEMONSTRATION/retrieve,verify HELD
+14:28:16   file:AC03: file_claim as a03
+14:28:58     FINALIZED/SUCCESS votes agree,agree,idle,agree,idle
+14:29:00   assess:AC03: assess as keeper
+14:30:02     FINALIZED/SUCCESS votes idle,agree,agree,agree,idle
+14:30:04     AC03: NOT_VERIFIED/DEMONSTRATION_FAILED/ HELD
+14:30:05   file:AC04: file_claim as a04
+14:30:50     FINALIZED/SUCCESS votes idle,idle,agree,agree,agree
+14:30:52   assess:AC04: assess as keeper
+14:31:59     FINALIZED/SUCCESS votes idle,disagree,agree,agree,agree
+14:32:01     AC04: NOT_VERIFIED/ONLY_ASSERTED/ HELD
+14:32:02   file:AC05: file_claim as a05
+14:32:43     FINALIZED/SUCCESS votes idle,agree,agree,idle,agree
+14:32:45   assess:AC05: assess as keeper
+14:33:27     FINALIZED/SUCCESS votes agree,agree,idle,agree,idle
+14:33:29     AC05: INSUFFICIENT_EVIDENCE/ASSERTIONS_ONLY/ HELD
+14:33:31   file:AC06: file_claim as a06
+14:34:10     FINALIZED/SUCCESS votes agree,agree,idle,agree,agree
+14:34:13   assess:AC06: assess as keeper
+14:34:58     FINALIZED/SUCCESS votes agree,idle,agree,idle,agree
+14:35:00     AC06: INSUFFICIENT_EVIDENCE/AGENT_NOT_NAMED/ HELD
+14:35:02   file:AC07: file_claim as a07
+14:35:47     FINALIZED/SUCCESS votes idle,agree,agree,idle,agree
+14:35:48   assess:AC07: assess as keeper
+14:36:28     FINALIZED/SUCCESS votes agree,agree,idle,agree,idle
+14:36:29     AC07: INSUFFICIENT_EVIDENCE/EVIDENCE_DIGEST_MISMATCH/ HELD
+14:36:31   file:AC08: file_claim as a08
+14:37:11     FINALIZED/SUCCESS votes idle,idle,agree,agree,agree
+14:37:12   assess:AC08: assess as keeper
+14:38:03     FINALIZED/SUCCESS votes agree,agree,agree,idle,idle
+14:38:05     AC08: INSUFFICIENT_EVIDENCE/NO_EVIDENCE_READABLE/ HELD
+14:38:07   file:AC09: file_claim as a09
+14:38:51     FINALIZED/SUCCESS votes agree,agree,agree,idle,idle
+14:38:53   assess:AC09: assess as keeper
+14:39:32     FINALIZED/SUCCESS votes idle,agree,agree,idle,agree
+14:39:34     AC09: INSUFFICIENT_EVIDENCE/SOURCE_ADDRESSES_VERIFIER/ HELD
+14:39:35   file:AC10: file_claim as a10
+14:40:14     FINALIZED/SUCCESS votes idle,agree,idle,agree,agree
+14:40:16   assess:AC10: assess as keeper
+14:41:30     FINALIZED/SUCCESS votes agree,idle,agree,idle,agree
+14:41:31     AC10: INSUFFICIENT_EVIDENCE/CORROBORATION_SHORT/ HELD
+14:41:33   file:AC11: file_claim as a11
+14:42:12     FINALIZED/SUCCESS votes agree,agree,idle,agree,idle
+14:42:14   assess:AC11: assess as keeper
+14:43:17     FINALIZED/SUCCESS votes agree,agree,idle,idle,agree
+14:43:19     AC11: INSUFFICIENT_EVIDENCE/CORROBORATION_SHORT/ HELD
+14:43:20   file:AC12: file_claim as a12
+14:44:04     FINALIZED/SUCCESS votes agree,agree,agree,agree,agree
+14:44:06   assess:AC12: assess as keeper
+14:45:02     FINALIZED/SUCCESS votes agree,agree,agree,idle,idle
+14:45:04     AC12: INSUFFICIENT_EVIDENCE/EVIDENCE_CONTRADICTORY/ HELD
+14:45:04 phase settle
+14:45:05   finalize:AC01: finalize as keeper
+14:45:44     FINALIZED/SUCCESS votes agree,agree,idle,idle,agree
+14:45:46     AC01 consumer view: verified=True partial=False HELD
+14:45:48   finalize:AC02: finalize as keeper
+14:46:28     FINALIZED/SUCCESS votes agree,agree,idle,idle,agree
+14:46:29     AC02 consumer view: verified=False partial=True HELD
+14:46:31   finalize:AC03: finalize as keeper
+14:47:10     FINALIZED/SUCCESS votes idle,agree,agree,idle,agree
+14:47:12     AC03 consumer view: verified=False partial=False HELD
+14:47:14   waiting 366s for the assess window of CL-000014
+14:49:14   waiting 246s for the assess window of CL-000014
+14:51:14   waiting 126s for the assess window of CL-000014
+14:53:14   lapse:AC13: lapse_claim as keeper
+14:54:00     FINALIZED/SUCCESS votes agree,agree,idle,idle,agree
+14:54:04   stats: {"claims": 26, "resolutions": 26, "standards": 2, "verified": 2}
+14:54:04 phase refusals
+14:54:06   refuse:wrong_hash: expecting a refusal of file_claim
+14:54:51     refused
+14:54:51   refuse:unknown_standard: expecting a refusal of file_claim
+14:55:33     refused
+14:55:33   refuse:outside_domains: expecting a refusal of file_claim
+14:56:13     refused
+14:56:13   refuse:undeclared_role: expecting a refusal of file_claim
+14:57:00     refused
+14:57:00   refuse:vague_agent_name: expecting a refusal of file_claim
+14:57:46     refused
+14:57:46   refuse:description_addresses_verifier: expecting a refusal of file_claim
+14:58:30     refused
+14:58:30   refuse:second_open_claim: expecting a refusal of file_claim
+14:59:09     refused
+14:59:09   refuse:double_assessment: expecting a refusal of assess
+14:59:49     refused
+14:59:49   refuse:stranger_contest: expecting a refusal of contest
+15:00:47     refused
+15:00:47   refuse:stranger_withdraw: expecting a refusal of withdraw_claim
+15:01:32     refused
+15:01:32   refuse:stranger_retire: expecting a refusal of retire_standard
+15:02:13     refused
+15:02:13 summary {"steps": 42, "transactions": 42, "outcomes_checked": 17, "outcomes_held": 17, "missed": [], "refusals": 11, "refusals_held": 11}

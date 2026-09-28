@@ -170,5 +170,32 @@ Code owns all of that.
 <!-- LIVE:START -->
 ## Live findings
 
-Filled from the run of record.
+Two passes ran against the canonical deployment: a diagnostic pass under
+`deploy/diagnostics/`, then the run of record. Both recorded 17 of 17 outcomes
+and 11 of 11 refusals, and the contract never changed.
+
+**What the panel proved it does.** A run log and a registry report on two
+origins, both bound to their bytes, produced a `VERIFIED` credential covering all
+three requirements - and because only the report shows verification, that
+credential could not have rested on one origin. A run that skipped the
+alteration test produced `PARTIALLY_VERIFIED`, scoped to the two requirements it
+showed. A run recording the agent calling an altered document authentic produced
+`NOT_VERIFIED / DEMONSTRATION_FAILED`, quoted from the agent's own log. A feature
+list and a profile, both labelled `DEMONSTRATION` and both naming the agent,
+passed every code check and were read by the panel for what they are:
+`NOT_VERIFIED / ONLY_ASSERTED`. The issuer's contest of the full credential
+produced a second reading of the same bytes that agreed with the first.
+
+**What code decided without a panel.** Descriptions declared as assertions
+(`ASSERTIONS_ONLY`), another agent's genuinely passing run (`AGENT_NOT_NAMED`), a
+declared digest that could not match (`EVIDENCE_DIGEST_MISMATCH`), unpublished
+evidence (`NO_EVIDENCE_READABLE`) and a report carrying a line addressed to the
+verifier (`SOURCE_ADDRESSES_VERIFIER`) - each `INSUFFICIENT_EVIDENCE`, none a
+finding against the agent.
+
+**Where a reason could vary.** The catalogue accepts either `ONLY_ASSERTED` or
+`NOT_DEMONSTRATED` for the brochure case, because a panel could reasonably say a
+feature list does not address a requirement rather than that it merely asserts
+it; both are `NOT_VERIFIED`. In both passes the panel read `ONLY_ASSERTED`, so
+the tolerance was declared in advance and never used.
 <!-- LIVE:END -->

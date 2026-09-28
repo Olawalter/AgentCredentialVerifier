@@ -1,0 +1,179 @@
+86 mutations, 0 anchor problems
+accept-control: unmodified copy must pass ...
+control green; 86 mutations over 3 job(s)
+
+  [1/86] killed  : a 404 is a generic failure
+  [2/86] killed  : a redirect is read as a retrieved item
+  [3/86] killed  : a forbidden document is a generic failure
+  [4/86] killed  : a binary content type is read
+  [5/86] killed  : an undecodable body is read
+  [6/86] killed  : an oversized document is not marked partial
+  [7/86] killed  : a pinned item's bytes are not checked against the declared digest
+  [8/86] killed  : a digest mismatch is judged by the panel anyway
+  [9/86] killed  : a round with no readable evidence is judged anyway
+  [10/86] killed  : evidence addressing the verifier is judged anyway
+  [11/86] killed  : text in the visible body is not scanned
+  [12/86] killed  : markup and attributes are not scanned
+  [13/86] killed  : nothing is bound to a declared item, so bytes are neither compared nor stored
+  [14/86] killed  : the title is not scanned
+  [15/86] killed  : a claim of nothing but assertions reaches the panel
+  [16/86] killed  : an assertion that names the agent counts as a named demonstration
+  [17/86] killed  : a claim whose demonstrations never name the agent reaches the panel
+  [18/86] killed  : a demonstration need not name the agent
+  [19/86] killed  : any text names any agent
+  [20/86] killed  : an assertion counts as a demonstration
+  [21/86] killed  : a reading about the agent's own work may quote any readable item
+  [22/86] killed  : a failure may be quoted from a record of another agent
+  [23/86] killed  : an agent name may be a word any document contains
+  [24/86] killed  : a reading that bears on the credential needs no quote
+  [25/86] killed  : the agent's description is not screened
+  [26/86] killed  : a spliced quote is accepted when the panel answers
+  [27/86] killed  : a quote need not ground in the text this node retrieved
+  [28/86] killed  : a spliced quote passes the gate
+  [29/86] killed  : a code reason is overridden by the panel's reading
+  [30/86] killed  : the gate lets a demonstration quote any readable item
+  [31/86] killed  : a failed required demonstration is credited
+  [32/86] killed  : contradictory evidence is credited anyway
+  [33/86] killed  : an unusable panel answer reaches a credential
+  [34/86] killed  : an unclear required reading is credited
+  [35/86] killed  : no demonstration at all falls through to the corroboration floor
+  [36/86] killed  : an optional requirement decides the credential
+  [37/86] killed  : a description read as such is reported as undemonstrated
+  [38/86] killed  : the corroboration floor does not hold
+  [39/86] killed  : unbound bytes may carry a credential
+  [40/86] killed  : corroboration counts items, not distinct hosts
+  [41/86] killed  : a partial demonstration is a full credential
+  [42/86] killed  : a negative credential carries a scope
+  [43/86] killed  : an optional demonstration counts toward the credential
+  [44/86] killed  : the scope includes requirements read on unbound bytes
+  [45/86] killed  : the consequence is not compared
+  [46/86] killed  : the scope is not compared
+  [47/86] killed  : which items name the agent is not compared
+  [48/86] killed  : the named list is not gated
+  [49/86] killed  : the leader's payload is gated against its own text, not this node's
+  [50/86] killed  : a transient failure ratifies a different failure
+  [51/86] killed  : a payload about another claim is accepted
+  [52/86] killed  : a standard need not name its evidence sources
+  [53/86] killed  : a requirement id may shadow a built-in subject
+  [54/86] killed  : no requirement need be required
+  [55/86] killed  : standard text may address the verifier
+  [56/86] killed  : min_independent_origins may exceed the sources the standard names
+  [57/86] killed  : the windows are unbounded
+  [58/86] killed  : the validity is unbounded
+  [59/86] killed  : an IP literal is a host
+  [60/86] killed  : a pinned item needs no digest
+  [61/86] killed  : a live item may declare a digest it is not held to
+  [62/86] killed  : an item need not declare a role
+  [63/86] killed  : an item may come from any host at all
+  [64/86] killed  : the same document may be declared twice
+  [65/86] killed  : the evidence list is unbounded
+  [66/86] killed  : a claim may be assessed after its window
+  [67/86] killed  : a claim may be assessed twice
+  [68/86] killed  : a credential may be contested twice
+  [69/86] killed  : a stranger may contest a credential
+  [70/86] killed  : a credential may be contested after its window
+  [71/86] killed  : a credential may be made final inside its contest window
+  [72/86] killed  : a claim may lapse while its window is open
+  [73/86] killed  : a retired standard still takes claims
+  [74/86] killed  : anyone may withdraw somebody else's claim
+  [75/86] killed  : anyone may retire a standard
+  [76/86] killed  : one agent may hold two open claims against one standard
+  [77/86] killed  : the standard hash a claim commits to is not checked
+  [78/86] killed  : finality does not issue the credential
+  [79/86] killed  : a closed claim keeps the agent's slot
+  [80/86] killed  : a credential never expires
+  [81/86] killed  : a negative credential carries an expiry
+  [82/86] killed  : the consumer view is case-sensitive about the address
+  [83/86] killed  : the open-claim cap does not hold
+  [84/86] killed  : a record stores a live item's bytes
+  [85/86] killed  : every reading is marked compared
+  [86/86] killed  : the verified count is not corrected when a contest overturns
+
+killed:   a redirect is read as a retrieved item
+killed:   a 404 is a generic failure
+killed:   a forbidden document is a generic failure
+killed:   a binary content type is read
+killed:   an undecodable body is read
+killed:   an oversized document is not marked partial
+killed:   a pinned item's bytes are not checked against the declared digest
+killed:   a digest mismatch is judged by the panel anyway
+killed:   a round with no readable evidence is judged anyway
+killed:   evidence addressing the verifier is judged anyway
+killed:   text in the visible body is not scanned
+killed:   markup and attributes are not scanned
+killed:   the title is not scanned
+killed:   nothing is bound to a declared item, so bytes are neither compared nor stored
+killed:   a claim of nothing but assertions reaches the panel
+killed:   a claim whose demonstrations never name the agent reaches the panel
+killed:   an assertion that names the agent counts as a named demonstration
+killed:   a demonstration need not name the agent
+killed:   any text names any agent
+killed:   an assertion counts as a demonstration
+killed:   a reading about the agent's own work may quote any readable item
+killed:   a failure may be quoted from a record of another agent
+killed:   an agent name may be a word any document contains
+killed:   the agent's description is not screened
+killed:   a reading that bears on the credential needs no quote
+killed:   a spliced quote is accepted when the panel answers
+killed:   a spliced quote passes the gate
+killed:   a quote need not ground in the text this node retrieved
+killed:   the gate lets a demonstration quote any readable item
+killed:   a code reason is overridden by the panel's reading
+killed:   an unusable panel answer reaches a credential
+killed:   contradictory evidence is credited anyway
+killed:   a failed required demonstration is credited
+killed:   an unclear required reading is credited
+killed:   an optional requirement decides the credential
+killed:   no demonstration at all falls through to the corroboration floor
+killed:   a description read as such is reported as undemonstrated
+killed:   the corroboration floor does not hold
+killed:   unbound bytes may carry a credential
+killed:   corroboration counts items, not distinct hosts
+killed:   a partial demonstration is a full credential
+killed:   an optional demonstration counts toward the credential
+killed:   a negative credential carries a scope
+killed:   the scope includes requirements read on unbound bytes
+killed:   the consequence is not compared
+killed:   the scope is not compared
+killed:   which items name the agent is not compared
+killed:   the named list is not gated
+killed:   the leader's payload is gated against its own text, not this node's
+killed:   a transient failure ratifies a different failure
+killed:   a payload about another claim is accepted
+killed:   a standard need not name its evidence sources
+killed:   a requirement id may shadow a built-in subject
+killed:   no requirement need be required
+killed:   min_independent_origins may exceed the sources the standard names
+killed:   standard text may address the verifier
+killed:   the windows are unbounded
+killed:   the validity is unbounded
+killed:   an IP literal is a host
+killed:   a pinned item needs no digest
+killed:   a live item may declare a digest it is not held to
+killed:   an item need not declare a role
+killed:   an item may come from any host at all
+killed:   the same document may be declared twice
+killed:   the evidence list is unbounded
+killed:   a claim may be assessed twice
+killed:   a claim may be assessed after its window
+killed:   a credential may be contested twice
+killed:   a stranger may contest a credential
+killed:   a credential may be contested after its window
+killed:   a credential may be made final inside its contest window
+killed:   a claim may lapse while its window is open
+killed:   anyone may withdraw somebody else's claim
+killed:   a retired standard still takes claims
+killed:   anyone may retire a standard
+killed:   the standard hash a claim commits to is not checked
+killed:   one agent may hold two open claims against one standard
+killed:   the open-claim cap does not hold
+killed:   a closed claim keeps the agent's slot
+killed:   finality does not issue the credential
+killed:   a credential never expires
+killed:   a negative credential carries an expiry
+killed:   the consumer view is case-sensitive about the address
+killed:   a record stores a live item's bytes
+killed:   every reading is marked compared
+killed:   the verified count is not corrected when a contest overturns
+
+mutations: 86 killed, 0 survived, 0 anchor missing
