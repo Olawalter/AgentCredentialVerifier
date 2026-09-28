@@ -64,6 +64,12 @@ def test_the_origin_floor_fits_the_domains(acv, direct_vm, direct_alice):
                   evidence_domains=["Runs.Example.org"])
     _bad_standard(acv, direct_vm, direct_alice, "distinct host suffixes",
                   evidence_domains=["127.0.0.1"])
+    _bad_standard(acv, direct_vm, direct_alice, "evidence_domains must be 1 to 4",
+                  evidence_domains=[], min_independent_origins=1)
+    _bad_standard(acv, direct_vm, direct_alice, "evidence_domains must be 1 to 4",
+                  evidence_domains=["a" + str(i) + ".example.org" for i in range(5)])
+    _bad_standard(acv, direct_vm, direct_alice, "evidence_domains must be 1 to 4",
+                  evidence_domains="runs.example.org")
 
 
 def test_windows_and_validity_are_bounded(acv, direct_vm, direct_alice):

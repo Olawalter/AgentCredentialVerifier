@@ -510,6 +510,83 @@ def test_a_forged_named_list_is_refused(acv, direct_vm, direct_alice, direct_bob
     assert s.replay(direct_vm, payload) is False
 
 
+def test_a_false_named_list_is_refused_even_when_no_quote_uses_it(acv, direct_vm,
+                                                                  direct_alice, direct_bob):
+    """A leader that records another agent's run as naming this agent, without
+    quoting it: the gate accepts the shape and the credential is unchanged, so
+    only the comparison keeps the falsehood out of the stored record."""
+    standard_id, digest = _ready(acv, direct_vm, direct_alice)
+    items = s.usual_items() + [s.item(s.OTHER_URL, s.OTHER, "Conformance run 0099")]
+    s.assessed(acv, direct_vm, direct_bob, standard_id, digest, items=items)
+    payload = s.leader_payload(direct_vm)
+    assert payload["named"] == ["E1", "E2"]
+    payload["named"] = ["E1", "E2", "E4"]
+    assert s.replay(direct_vm, payload) is False
+
+
+def test_the_gate_itself_refuses_a_named_list_that_is_not_readable_demonstrations(mod):
+    """The comparison would also catch it; the gate holds on its own too, which is
+    what protects the second pass over the ratified payload, where there is no
+    reproduction to compare against."""
+    ctx = {"evidence": [{"evidence_id": "E1", "role": "DEMONSTRATION"},
+                        {"evidence_id": "E2", "role": "ASSERTION"},
+                        {"evidence_id": "E3", "role": "DEMONSTRATION"}]}
+    sources = [{"evidence_id": "E1", "status": "RETRIEVED"},
+               {"evidence_id": "E2", "status": "RETRIEVED"},
+               {"evidence_id": "E3", "status": "NOT_FOUND"}]
+    assert mod._valid_named(ctx, ["E1"], sources) is True
+    assert mod._valid_named(ctx, [], sources) is True
+    assert mod._valid_named(ctx, ["E1", "E2"], sources) is False     # an assertion
+    assert mod._valid_named(ctx, ["E3"], sources) is False           # unreadable
+    assert mod._valid_named(ctx, ["E1", "E1"], sources) is False
+    assert mod._valid_named(ctx, "E1", sources) is False
+
+
+def test_a_quote_is_grounded_in_this_nodes_own_bytes(acv, direct_vm, direct_alice,
+                                                     direct_bob):
+    """A fabricated quote on a reading whose state it does not change leaves the
+    credential as it was, so only re-grounding against this node's own retrieval
+    can refuse it."""
+    _assessed(acv, direct_vm, direct_alice, direct_bob)
+    payload = s.leader_payload(direct_vm)
+    s.finding_in(payload, "REQ_VERIFY")["quotes"].append(
+        {"evidence_id": "E2", "text": "ShipDocs Agent 7 verified four hundred documents"})
+    assert s.replay(direct_vm, payload) is False
+
+
+def test_a_spliced_quote_is_refused_by_the_gate_even_though_it_grounds(acv, direct_vm,
+                                                                      direct_alice,
+                                                                      direct_bob):
+    """Grounding walks an ellipsis-separated quote part by part, so a splice of two
+    real passages does ground. The gate refuses it anyway."""
+    _assessed(acv, direct_vm, direct_alice, direct_bob)
+    payload = s.leader_payload(direct_vm)
+    s.finding_in(payload, "REQ_RETRIEVE")["quotes"] = [
+        {"evidence_id": "E1", "text": "Test retrieve_bl: ShipDocs Agent 7 fetched ... "
+                                      "Result: PASS"}]
+    assert s.replay(direct_vm, payload) is False
+
+
+def test_a_validator_that_reads_a_different_scope_disagrees(acv, direct_vm, direct_alice,
+                                                            direct_bob):
+    """Same verdict, same reason, a different optional requirement demonstrated:
+    the scope is what a router acts on, so it is a value every validator agrees on."""
+    reqs = s.standard()["requirements"] + [
+        s.requirement("batch", "The agent processed a batch of documents in one run.",
+                      False)]
+    standard_id, digest = _ready(acv, direct_vm, direct_alice, requirements=reqs)
+    subjects = s.verified_said()
+    subjects["REQ_BATCH"] = s.said("DEMONSTRATED", [("E1", s.RETRIEVE_LINE)])
+    claim_id, _r = s.assessed(acv, direct_vm, direct_bob, standard_id, digest,
+                              subjects=subjects)
+    assert acv.get_verdict(claim_id)["scope"] == ["retrieve", "verify", "flag_altered",
+                                                  "batch"]
+    theirs = s.verified_said()
+    theirs["REQ_BATCH"] = s.said("NOT_DEMONSTRATED", [])
+    s.panel(direct_vm, theirs)
+    assert s.replay(direct_vm) is False
+
+
 def test_a_forged_code_decision_is_refused(acv, direct_vm, direct_alice, direct_bob):
     """A leader that skips the panel by claiming no demonstration names the agent."""
     _assessed(acv, direct_vm, direct_alice, direct_bob)
